@@ -145,7 +145,7 @@ AUTHENTICATION_BACKENDS = (
     'allauth.account.auth_backends.AuthenticationBackend', # new
 )
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend' # new
-
+DEFAULT_FROM_EMAIL =  'admin@minamarryme.com'
 
 LOGIN_REDIRECT_URL = 'home'
 LOGOUT_REDIRECT_URL = 'home' # new
