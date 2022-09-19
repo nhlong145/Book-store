@@ -162,3 +162,6 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4' # new
 
 # django-allauth config
 SITE_ID = 1 # new
+
+MEDIA_URL = '/media/' # new
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media') # new
