@@ -29,4 +29,5 @@ urlpatterns = [
     # path('accounts/', include('users.urls')), # new
     path('', include('pages.urls')), # new
     path('books/', include('books.urls')), # new
+    path('orders/', include('orders.urls')), # new
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) # new

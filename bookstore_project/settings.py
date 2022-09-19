@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'users.apps.UsersConfig', # new
     'pages.apps.PagesConfig', # new
     'books.apps.BooksConfig', # new
+    'orders.apps.OrdersConfig', # new
 ]
 
 MIDDLEWARE = [
@@ -165,3 +166,7 @@ SITE_ID = 1 # new
 
 MEDIA_URL = '/media/' # new
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media') # new
+
+# Stripe
+STRIPE_TEST_PUBLISHABLE_KEY=os.environ.get('STRIPE_TEST_PUBLISHABLE_KEY')
+STRIPE_TEST_SECRET_KEY=os.environ.get('STRIPE_TEST_SECRET_KEY')
