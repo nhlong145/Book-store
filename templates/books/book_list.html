@@ -7,9 +7,16 @@
 {% comment %} {% if not perms.books.special_status %} {% endcomment %}
 <a href="{% url 'orders' %}" class="btn btn-success" >Purchase All Books</a>
 {% comment %} {% endif %} {% endcomment %}
+<br>
     {% for book in  book_list %}
+        <h2>------------------------------------------------</h2>
         <div>
             <h2><a href="{{ book.get_absolute_url }}">{{ book.title }}</a></h2>
         </div>
+        <br>
+        {% if book.cover %}
+            <a href="{{ book.get_absolute_url }}"><img class="bookcover" src="{{ book.cover.url}}" alt="{{ book.title }}"></a>
+        {% endif %}
+        <br>
     {% endfor %}
 {% endblock content %}
