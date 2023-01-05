@@ -9,6 +9,11 @@
     {% for book in book_list %}
         <div>
             <h3><a href="{{ book.get_absolute_url }}">{{ book.title }}</a></h3>
+            {% if book.cover %}
+                <a href="{{ book.get_absolute_url }}">
+                    <img class="bookcover" src="{{ book.cover.url}}" alt="{{ book.title }}">
+                </a>
+            {% endif %}
             <p>Author: {{ book.author }}</p>
             <p>Price: $ {{ book.price }}</p>
         </div>

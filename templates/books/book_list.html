@@ -15,7 +15,9 @@
         </div>
         <br>
         {% if book.cover %}
-            <a href="{{ book.get_absolute_url }}"><img class="bookcover" src="{{ book.cover.url}}" alt="{{ book.title }}"></a>
+            <a href="{{ book.get_absolute_url }}">
+                <img class="bookcover" src="{{ book.cover.url}}" alt="{{ book.title }}">
+            </a>
         {% endif %}
         <br>
     {% endfor %}
