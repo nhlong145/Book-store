@@ -11,6 +11,7 @@
     <h2><a href="">{{ book.title }}</a></h2>
     <p>Author: {{ book.author }}</p>
     <p>Price: {{ book.price }}</p>
+    <a href="{% url 'orders' %}" class="btn btn-success" >Purchase Books</a>
     <div>
         <h3>Reviews</h3>
         <ul>

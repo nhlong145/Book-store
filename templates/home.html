@@ -6,6 +6,27 @@
 
 {% block content %}
 <h1>Homepage</h1>
+<form class="form-inline mt-2 mt-md-0" action="{% url 'search_results' %}"
+method="get">
+    <input name="q" class="form-control mr-sm-2" type="text" placeholder="Search"
+    aria-label="Search">
+</form>
+<br>
+<img class="bookcover" src="{% static 'images/OIP.jpg' %}">
+
+{% if user.is_authenticated %}
+    <p>Hi {{ user.email }}!</p>
+    <p><a href="{% url 'account_logout' %}" class="btn btn-danger">Log Out</a></p>
+{% else %}
+    <p>You are not logged in</p>
+    <p><a href="{% url 'account_login' %}" class="btn btn-success">Log In</a>
+    <a href="{% url 'account_signup' %}" class="btn btn-success">Sign Up</a></p>
+{% endif %}
+{% endblock content %}
+
+{% comment %}
+{% block content %}
+<h1>Homepage</h1>
 <img class="bookcover" src="{% static 'images/OIP.jpg' %}">
 {% if user.is_authenticated %}
     <p>Hi {{ user.email }}!</p>
@@ -15,4 +36,4 @@
     <p><a href="{% url 'account_login' %}">Log In</a>
     <a href="{% url 'account_signup' %}">Sign Up</a></p>
 {% endif %}
-{% endblock content %}
+{% endblock content %} {% endcomment %}
